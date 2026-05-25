@@ -2082,6 +2082,10 @@ pub fn rustdesk_interval(i: Interval) -> ThrottledInterval {
 }
 
 pub fn load_custom_client() {
+    // AKMERCAN markalama: uygulama adını "Akmercan" olarak sabitle.
+    // get_app_name() her yerde bunu okur → arayüz, kurulum klasörü, Windows
+    // hizmeti, kısayollar, exe adı ve karşıdaki onay kutusu "Akmercan" olur.
+    *config::APP_NAME.write().unwrap() = "Akmercan".to_owned();
     #[cfg(debug_assertions)]
     if let Ok(data) = std::fs::read_to_string("./custom.txt") {
         read_custom_client(data.trim());
