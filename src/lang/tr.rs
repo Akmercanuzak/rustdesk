@@ -379,8 +379,8 @@ pub static ref T: std::collections::HashMap<&'static str, &'static str> =
         ("Screen Share", "Ekran Paylaşımı"),
         ("ubuntu-21-04-required", "Wayland, Ubuntu 21.04 veya daha yüksek bir sürüm gerektirir."),
         ("wayland-requires-higher-linux-version", "Wayland, linux dağıtımının daha yüksek bir sürümünü gerektirir. Lütfen X11 masaüstünü deneyin veya işletim sisteminizi değiştirin."),
-        ("xdp-portal-unavailable", ""),
-        ("JumpLink", "View"),
+        ("xdp-portal-unavailable", "xdg-desktop-portal kullanılamıyor"),
+        ("JumpLink", "Görüntüle"),
         ("Please Select the screen to be shared(Operate on the peer side).", "Lütfen paylaşılacak ekranı seçiniz (Ekran tarafında çalıştırın)."),
         ("Show RustDesk", "RustDesk'i Göster"),
         ("This PC", "Bu PC"),
@@ -579,7 +579,7 @@ pub static ref T: std::collections::HashMap<&'static str, &'static str> =
         ("2FA code must be 6 digits.", "2FA kodu 6 haneli olmalıdır."),
         ("Multiple Windows sessions found", "Birden fazla Windows oturumu bulundu"),
         ("Please select the session you want to connect to", "Lütfen bağlanmak istediğiniz oturumu seçin"),
-        ("powered_by_me", "RustDesk tarafından desteklenmektedir"),
+        ("powered_by_me", "Akmercan Batıkar Doğalgaz"),
         ("outgoing_only_desk_tip", "Bu özelleştirilmiş bir sürümdür.\nDiğer cihazlara bağlanabilirsiniz, ancak diğer cihazlar cihazınıza bağlanamaz."),
         ("preset_password_warning", "Bu özelleştirilmiş sürüm, önceden ayarlanmış bir parola ile birlikte gelir. Bu parolayı bilen herkes cihazınızın tam kontrolünü ele geçirebilir. Bunu beklemiyorsanız yazılımı hemen kaldırın."),
         ("Security Alert", "Güvenlik Uyarısı"),
@@ -744,6 +744,6 @@ pub static ref T: std::collections::HashMap<&'static str, &'static str> =
         ("password-hidden-tip", "Parola gizli"),
         ("preset-password-in-use-tip", "Önceden ayarlanmış parola kullanılıyor"),
         ("Enable privacy mode", "Gizlilik modunu etkinleştir"),
-        ("allow-remote-toolbar-docking-any-edge", ""),
+        ("allow-remote-toolbar-docking-any-edge", "Araç çubuğunu her kenara yaslamaya izin ver"),
     ].iter().cloned().collect();
 }
