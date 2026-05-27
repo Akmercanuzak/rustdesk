@@ -80,34 +80,29 @@ class _DesktopHomePageState extends State<DesktopHomePage>
     final isIncomingOnly = bind.isIncomingOnly();
     final isOutgoingOnly = bind.isOutgoingOnly();
     final children = <Widget>[
-      Align(
-        alignment: Alignment.center,
-        child: loadLogo(),
-      ),
-      Align(
-        alignment: Alignment.center,
-        child: loadPowered(context),
+      // Logo + şirket adı: sol üst, tek satır
+      Padding(
+        padding: const EdgeInsets.fromLTRB(12, 12, 8, 8),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(width: 40, height: 34, child: loadLogo()),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Text(
+                "Akmercan Batıkar Doğalgaz",
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700,
+                      color: MyTheme.accent,
+                    ),
+              ),
+            ),
+          ],
+        ),
       ),
       buildTip(context),
       if (!isOutgoingOnly) buildIDBoard(context),
-      FutureBuilder<Widget>(
-        future: Future.value(
-            Obx(() => buildHelpCards(stateGlobal.updateUrl.value))),
-        builder: (_, data) {
-          if (data.hasData) {
-            if (isIncomingOnly) {
-              if (isInHomePage()) {
-                Future.delayed(Duration(milliseconds: 300), () {
-                  _updateWindowSize();
-                });
-              }
-            }
-            return data.data!;
-          } else {
-            return const Offstage();
-          }
-        },
-      ),
       buildPluginEntry(),
     ];
     if (isIncomingOnly) {
@@ -854,6 +849,12 @@ class _DesktopHomePageState extends State<DesktopHomePage>
         _updateWindowSize();
       });
     }
+    // Akmercan: sağ panel kaldırıldı — ana pencereyi kompakt boyuta sabitle
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      try {
+        windowManager.setSize(const Size(620, 500));
+      } catch (e) {}
+    });
     WidgetsBinding.instance.addObserver(this);
   }
 
