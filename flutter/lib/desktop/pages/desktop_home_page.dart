@@ -80,27 +80,6 @@ class _DesktopHomePageState extends State<DesktopHomePage>
     final isIncomingOnly = bind.isIncomingOnly();
     final isOutgoingOnly = bind.isOutgoingOnly();
     final children = <Widget>[
-      // Logo + şirket adı: sol üst, tek satır
-      Padding(
-        padding: const EdgeInsets.fromLTRB(12, 12, 8, 8),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(width: 40, height: 34, child: loadLogo()),
-            const SizedBox(width: 8),
-            Expanded(
-              child: Text(
-                "Akmercan Batıkar Doğalgaz",
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w700,
-                      color: MyTheme.accent,
-                    ),
-              ),
-            ),
-          ],
-        ),
-      ),
       buildTip(context),
       if (!isOutgoingOnly) buildIDBoard(context),
       buildPluginEntry(),

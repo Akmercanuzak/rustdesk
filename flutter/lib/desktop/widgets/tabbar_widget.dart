@@ -639,11 +639,12 @@ class _DesktopTabState extends State<DesktopTab>
                           child: loadIcon(16),
                         ),
                         Offstage(
-                            offstage: !showTitle,
+                            offstage: !showLogo,
                             child: const Text(
-                              "RustDesk",
-                              style: TextStyle(fontSize: 13),
-                            ).marginOnly(left: 2))
+                              "Akmercan Batıkar Doğalgaz",
+                              style: TextStyle(
+                                  fontSize: 13, fontWeight: FontWeight.w600),
+                            ).marginOnly(left: 6))
                       ]).marginOnly(
                         left: 5,
                         right: 10,
