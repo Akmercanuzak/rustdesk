@@ -314,6 +314,20 @@ class _ConnectionPageState extends State<ConnectionPage>
                 Flexible(child: _buildRemoteIDTextField(context)),
               ],
             ).marginOnly(top: 22),
+            // Akmercan markalama: alttaki bos alani kurumsal logo doldurur.
+            // BoxFit.contain → goruntunun orani korunur, kareleneni alanin
+            // icine sigar; cevresinde ufak bosluk olabilir, sorun degil.
+            Expanded(
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(24),
+                  child: Image.asset(
+                    'assets/akmercan_logo.png',
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+            ),
           ],
         ).paddingOnly(left: 12.0)),
         if (!isOutgoingOnly) const Divider(height: 1),
